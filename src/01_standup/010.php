@@ -1,20 +1,17 @@
 <?php
-    $comment = [
-        "こんにちわ",
-        "お疲れ様",
-        "頑張ってください",
-        "まだまだ余裕ですね！",
-        "おやすみなさい",
-    ];
-    $now = time();
-    $today = date('Y年m月d日', $now );
-    $now_time = date('H時i分s秒', $now );
+require_once "mylib.php";
 
-    $min = floor( $now / 60 );
-    $hour = floor( $min / 60 );
-    $day = floor( $hour / 24 );
+	$p = 255 / 100;
 
-    $index = $now % count( $comment );
+	$r = 80 * $p; // 0 ～ 100
+	$g = 100 * $p;
+	$b = 80 * $p;
+
+	$rgb = rgbString($r, $g, $b);
+
+	function foo(){
+		echo "bar";
+	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html lang="ja">
@@ -22,7 +19,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>008:秒ごとに文章を変えてみよう</title>
+	<title>hello</title>
 	<link rel="stylesheet" href="/event/lottery/css/index.css">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="/event/lottery/bootstrap_4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -32,21 +29,11 @@
 <body>
 	<header class="top-right links">
 	</header>
-	<div class="flex-center position-ref full-height" style="background-color:<?= $rgb ?>">
+	<div class="flex-center position-ref full-height" style="background-color:<?= $rgb ?>;">
 		<div class="content">
 			<div class="title m-b-md">
-                <div>
-                    <?= $comment[$index] ?>
-                </div>
-                <div style="font-size:30px;text-align:left;width:400px;margin-right:auto;margin-left:auto;">
-                    <?= $today ?><br/>
-                    <?= $now_time ?>
-                    <div> 経過　秒： <?= $now ?>秒</div>
-                    <div> 経過　分： <?= $min ?>分</div>
-                    <div> 経過時間： <?= $hour ?>時</div>
-                    <div> 経過　日： <?= $day ?>日</div>
-                </div>
-                </div>
+				<?= date('Y年m月d日') ?><br/>
+				<?= date('H時i分s秒') ?><br/>
 			</div>
 		</div>
 	</div>
