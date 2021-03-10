@@ -1,0 +1,34 @@
+/* 背景 */
+body {
+  background: #efefef;
+ }
+
+/* くじ引き */
+#kuji{
+  width: 200px;
+  height: 200px;
+  background: rgb(235, 205, 40);
+
+  margin: 30px auto;
+  text-align: center;
+  line-height:200px;
+
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 42px;
+
+  cursor: pointer;
+  user-select: none;
+  border: solid 3px #797676 ;
+}
+
+/* クリック時のくじ引き */
+#kuji:active {
+box-shadow: 0 5px 0 #f7f3f3;
+margin-top: 35px;
+}
+
+#title {
+text-align: center;
+}
+
